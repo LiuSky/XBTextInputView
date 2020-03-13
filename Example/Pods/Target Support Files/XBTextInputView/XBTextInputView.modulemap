@@ -1,0 +1,6 @@
+framework module XBTextInputView {
+  umbrella header "XBTextInputView-umbrella.h"
+
+  export *
+  module * { export * }
+}

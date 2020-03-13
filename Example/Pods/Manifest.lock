@@ -1,0 +1,16 @@
+PODS:
+  - XBTextInputView (1.0.0)
+
+DEPENDENCIES:
+  - XBTextInputView (from `../`)
+
+EXTERNAL SOURCES:
+  XBTextInputView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XBTextInputView: 178f0238d9d3eb11eb625d017d8ce97b7e3e9fc7
+
+PODFILE CHECKSUM: 5de88546bfcfffdc248fd7b664fd175b28914cf0
+
+COCOAPODS: 1.8.4

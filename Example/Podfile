@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XBTextInputView_Example' do
+  pod 'XBTextInputView', :path => '../'
+
+  target 'XBTextInputView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
