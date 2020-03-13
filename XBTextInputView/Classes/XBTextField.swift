@@ -165,6 +165,19 @@ open class XBTextField: UITextField {
         }
     }
     
+    /// 富文本
+    open override var attributedText: NSAttributedString? {
+        didSet {
+            
+            guard oldValue != self.attributedText,
+                  shouldResponseToProgrammaticallyTextChanges else {
+                 return
+            }
+            
+            fireTextDidChangeEventForTextField()
+        }
+    }
+    
     /// delegator
     private lazy var delegator: TextFieldDelegator = {
         $0.textField = self
