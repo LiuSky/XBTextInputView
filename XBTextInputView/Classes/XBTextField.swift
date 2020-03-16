@@ -27,31 +27,31 @@ open class XBTextField: UITextField {
             
             // 1、iOS 10 以下的版本，从中文输入法的候选词里选词输入，是不会走到 textField:shouldChangeCharactersInRange:replacementString: 的，所以要在这里截断文字
             // 2、如果是中文输入法正在输入拼音的过程中（markedTextRange 不为 nil），是不应该限制字数的（例如输入“huang”这5个字符，其实只是为了输入“黄”这一个字符），所以在 shouldChange 那边不会限制，而是放在 didChange 这里限制。
-            guard let _ = textField.markedTextRange else {
-                if (textField.text! as NSString).length > textField.maximumTextLength {
-                    textField.text = (textField.text! as NSString).substring(to: textField.maximumTextLength)
-                }
-                
-                guard let regexString = textField.formatterType.regexString,
-                      let text = textField.text  else {
-                        return
-                }
-                
-                let predicate = NSPredicate(format: "SELF MATCHES %@", regexString)
-                if !(predicate.evaluate(with: text) || text.count <= 0) {
-                    
-                    /// 因为底层会对Text 进行通知以及更新。所有会触发两次
-                    let shouldResponseToProgrammaticallyTextChanges = textField.shouldResponseToProgrammaticallyTextChanges
-                    textField.shouldResponseToProgrammaticallyTextChanges = false
-                    textField.text = currentString
-                    textField.shouldResponseToProgrammaticallyTextChanges = shouldResponseToProgrammaticallyTextChanges
-                } else {
-                    currentString = textField.text
-                }
+            guard textField.markedTextRange == nil else {
                 return
             }
+            
+            if (textField.text! as NSString).length > textField.maximumTextLength {
+                textField.text = (textField.text! as NSString).substring(to: Int(textField.maximumTextLength))
+            }
+            
+            guard let regexString = textField.formatterType.regexString,
+                let text = textField.text  else {
+                    return
+            }
+            
+            let predicate = NSPredicate(format: "SELF MATCHES %@", regexString)
+            if !(predicate.evaluate(with: text) || text.count <= 0) {
+                
+                /// 因为底层会对Text 进行通知以及更新。所有会触发两次
+                let shouldResponseToProgrammaticallyTextChanges = textField.shouldResponseToProgrammaticallyTextChanges
+                textField.shouldResponseToProgrammaticallyTextChanges = false
+                textField.text = currentString
+                textField.shouldResponseToProgrammaticallyTextChanges = shouldResponseToProgrammaticallyTextChanges
+            } else {
+                currentString = textField.text
+            }
         }
-        
         
         
         /// UITextFieldDelegate
@@ -63,8 +63,8 @@ open class XBTextField: UITextField {
             
             
             guard let temTextField = textField as? XBTextField,
-                temTextField.maximumTextLength < Int.max  else {
-                return true
+                temTextField.maximumTextLength < UInt.max  else {
+                    return true
             }
             
             // 如果是中文输入法正在输入拼音的过程中（markedTextRange 不为 nil），是不应该限制字数的（例如输入“huang”这5个字符，其实只是为了输入“黄”这一个字符），所以在 shouldChange 这里不会限制，而是放在 didChange 那里限制。
@@ -86,7 +86,7 @@ open class XBTextField: UITextField {
             if (textField.text?.count ?? 0) - rangeLength + string.count > temTextField.maximumTextLength {
                 
                 // 将要插入的文字裁剪成这么长，就可以让它插入了
-                let substringLength = temTextField.maximumTextLength - (textField.text?.count ?? 0) + rangeLength
+                let substringLength = Int(temTextField.maximumTextLength) - (textField.text?.count ?? 0) + rangeLength
                 if substringLength > 0 && (textField.text?.count ?? 0) > substringLength {
                     
                     let characterSequencesRange = (string as NSString).rangeOfComposedCharacterSequences(for: NSMakeRange(0, substringLength))
@@ -130,8 +130,8 @@ open class XBTextField: UITextField {
         }
     }
     
-    /// 显示允许输入的最大文字长度，默认为 NSUIntegerMax，也即不限制长度
-    public var maximumTextLength: Int = Int.max
+    /// 显示允许输入的最大文字长度，默认为 UInt.max，也即不限制长度
+    public var maximumTextLength: UInt = UInt.max
     
     /// 当通过 `setText:`、`setAttributedText:`等方式修改文字时，是否应该自动触发 UIControlEventEditingChanged 事件及 UITextFieldTextDidChangeNotification 通知 默认为YES（注意系统的 UITextField 对这种行为默认是 NO）
     public var shouldResponseToProgrammaticallyTextChanges: Bool = true
@@ -157,8 +157,8 @@ open class XBTextField: UITextField {
         didSet {
             
             guard oldValue != self.text,
-                  shouldResponseToProgrammaticallyTextChanges else {
-                return
+                shouldResponseToProgrammaticallyTextChanges else {
+                    return
             }
             
             fireTextDidChangeEventForTextField()
@@ -170,8 +170,8 @@ open class XBTextField: UITextField {
         didSet {
             
             guard oldValue != self.attributedText,
-                  shouldResponseToProgrammaticallyTextChanges else {
-                 return
+                shouldResponseToProgrammaticallyTextChanges else {
+                    return
             }
             
             fireTextDidChangeEventForTextField()

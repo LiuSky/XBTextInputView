@@ -36,6 +36,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Demo"
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -78,6 +79,9 @@ extension ViewController: UITableViewDelegate {
         vc.formatterType = array[indexPath.row].1
         navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+//        let vc = TextViewDemoViewController()
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

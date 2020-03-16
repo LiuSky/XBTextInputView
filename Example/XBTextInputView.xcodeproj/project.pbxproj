@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		80B924F9241BA07D00F4754B /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B924F8241BA07D00F4754B /* DemoViewController.swift */; };
+		80C576B0241F213000F0BE8B /* TextViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C576AF241F213000F0BE8B /* TextViewDemoViewController.swift */; };
 		A728C3419A9E33A81E539BF2 /* Pods_XBTextInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74006025F72D410032D5E3F7 /* Pods_XBTextInputView_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		6ACF9ABDE7FE846766B14523 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		74006025F72D410032D5E3F7 /* Pods_XBTextInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XBTextInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B924F8241BA07D00F4754B /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		80C576AF241F213000F0BE8B /* TextViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDemoViewController.swift; sourceTree = "<group>"; };
 		815F42CB65B9A81DCB39C51D /* XBTextInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XBTextInputView.podspec; path = ../XBTextInputView.podspec; sourceTree = "<group>"; };
 		C0BB1CCE311BE258DCF33D6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D1252534530564E77D6FC51F /* Pods-XBTextInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBTextInputView_Example.debug.xcconfig"; path = "Target Support Files/Pods-XBTextInputView_Example/Pods-XBTextInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				80B924F8241BA07D00F4754B /* DemoViewController.swift */,
+				80C576AF241F213000F0BE8B /* TextViewDemoViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80B924F9241BA07D00F4754B /* DemoViewController.swift in Sources */,
+				80C576B0241F213000F0BE8B /* TextViewDemoViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
