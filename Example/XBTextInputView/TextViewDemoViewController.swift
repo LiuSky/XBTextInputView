@@ -20,7 +20,7 @@ final class TextViewDemoViewController: UIViewController {
         $0.layer.masksToBounds = true
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.textAlignment = .left
-        $0.maximumTextLength = 10
+        $0.maximumTextLength = 100
         return $0
     }(XBTextView())
     

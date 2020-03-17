@@ -74,14 +74,14 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = DemoViewController()
-        vc.navigationItem.title = array[indexPath.row].0
-        vc.formatterType = array[indexPath.row].1
-        navigationController?.pushViewController(vc, animated: true)
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-//        let vc = TextViewDemoViewController()
+//        let vc = DemoViewController()
+//        vc.navigationItem.title = array[indexPath.row].0
+//        vc.formatterType = array[indexPath.row].1
 //        navigationController?.pushViewController(vc, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = TextViewDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
