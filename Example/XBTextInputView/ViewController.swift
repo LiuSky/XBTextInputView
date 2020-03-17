@@ -58,6 +58,10 @@ final class ViewController: UIViewController {
 /// MARK - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
@@ -72,16 +76,32 @@ extension ViewController: UITableViewDataSource {
 /// MARK - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "TextField"
+        } else {
+            return "TextView"
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let vc = DemoViewController()
-//        vc.navigationItem.title = array[indexPath.row].0
-//        vc.formatterType = array[indexPath.row].1
-//        navigationController?.pushViewController(vc, animated: true)
-//        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            let vc = TextFieldDemoViewController()
+            vc.navigationItem.title = array[indexPath.row].0
+            vc.formatterType = array[indexPath.row].1
+            navigationController?.pushViewController(vc, animated: true)
         
-        let vc = TextViewDemoViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = TextViewDemoViewController()
+            vc.formatterType = array[indexPath.row].1
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

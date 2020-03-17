@@ -1,5 +1,5 @@
 //
-//  DemoViewController.swift
+//  TextFieldDemoViewController.swift
 //  XBTextInputView_Example
 //
 //  Created by xiaobin liu on 2020/3/13.
@@ -10,7 +10,7 @@ import UIKit
 import XBTextInputView
 
 /// MARK - Demo
-final class DemoViewController: UIViewController {
+final class TextFieldDemoViewController: UIViewController {
 
     /// 格式
     public var formatterType: FormatterType = .default {
@@ -29,7 +29,7 @@ final class DemoViewController: UIViewController {
         $0.placeholder = "情输入内容"
         $0.clearButtonMode = .always
         $0.clearButtonPositionAdjustment = UIOffset(horizontal: -10, vertical: 0)
-        $0.addTarget(self, action: #selector(handleTextChangeEvent(_:)), for: UIControl.Event.editingChanged)
+        $0.delegate = self
         return $0
     }(XBTextField())
     
@@ -45,18 +45,12 @@ final class DemoViewController: UIViewController {
             textField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-
-    @objc
-    private func handleTextChangeEvent(_ textField: XBTextField) {
-        debugPrint(textField.text ?? "")
-    }
 }
 
 /// MARK - UITextFieldDelegate
-extension DemoViewController: UITextFieldDelegate {
+extension TextFieldDemoViewController: XBTextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        debugPrint("do thing")
-        return true
+    func textField(_ textField: XBTextField, didPreventTextChangeInRange range: NSRange, replacementString: String?) {
+        debugPrint("超出了长度\(replacementString ?? "")")
     }
 }

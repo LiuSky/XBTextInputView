@@ -10,7 +10,7 @@ import UIKit
 
 
 /// MARK - XBTextViewDelegate
-@objc protocol XBTextViewDelegate: UITextViewDelegate {
+@objc public protocol XBTextViewDelegate: UITextViewDelegate {
     
     /**
      *  输入框高度发生变化时的回调，仅当 `autoResizable` 属性为 YES 时才有效。
@@ -90,9 +90,6 @@ open class XBTextView: UITextView {
         return $0
     }(UILabel())
     
-    /// 如果在 handleTextChanged(_:) 里主动调整 contentOffset，则为了避免被系统的自动调整覆盖，会利用这个标记去屏蔽系统对 setContentOffset(_:) 的调用
-    private var shouldRejectSystemScroll: Bool?
-    
     /// 原始委托
     private weak var originalDelegate: XBTextViewDelegate?
     
@@ -155,7 +152,7 @@ extension XBTextView {
             // 前后文字发生变化，则要根据是否主动接管 delegate 来决定是否要询问 delegate
             if shouldResponseToProgrammaticallyTextChanges {
                 
-                let shouldChangeText = delegate?.textView?(self, shouldChangeTextIn: NSMakeRange(0, textBeforeChange.count), replacementText: newValue) ?? true
+                let shouldChangeText = delegate?.textView?(self, shouldChangeTextIn: NSMakeRange(0, textBeforeChange.count), replacementText: newValue ?? "") ?? true
                 
                 if !shouldChangeText {
                     // 不应该改变文字，所以连 super 都不调用，直接结束方法
@@ -280,32 +277,6 @@ extension XBTextView {
         }
     }
     
-    /// 重写 setContentOffset
-    /// - Parameters:
-    ///   - contentOffset: <#contentOffset description#>
-    ///   - animated: <#animated description#>
-    open override func setContentOffset(_ contentOffset: CGPoint, animated: Bool) {
-        if !shouldRejectSystemScroll! {
-            super.setContentOffset(contentOffset, animated: animated)
-        } else {
-            // do thing
-        }
-    }
-
-    /// 重写 contentOffset
-    open override var contentOffset: CGPoint {
-        get {
-            return super.contentOffset
-        }
-        set {
-            if shouldRejectSystemScroll != nil && !shouldRejectSystemScroll! {
-                super.contentOffset = newValue
-            } else {
-                // do thing
-            }
-        }
-    }
-    
     /// 重新绘制
     /// - Parameter rect: rect
     open override func draw(_ rect: CGRect) {
@@ -363,14 +334,6 @@ extension XBTextView {
             if textView?.window == nil {
                 return
             }
-            
-            shouldRejectSystemScroll = true
-            
-            // 用 dispatch 延迟一下，因为在文字发生换行时，系统自己会做一些滚动，我们要延迟一点才能避免被系统的滚动覆盖
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0, execute: {
-                self.shouldRejectSystemScroll = false
-                //self.scrollCaretVisibleAnimated(false)
-            })
         }
     }
     
@@ -383,7 +346,6 @@ extension XBTextView {
             placeholderLabel.alpha = 0 // 用alpha来让placeholder隐藏，从而尽量避免因为显隐 placeholder 导致 layout
         }
     }
-    
     
     /// 合并UIEdgeInsets
     /// - Parameters:
@@ -399,7 +361,6 @@ extension XBTextView {
         return edge
     }
     
-    
     /// 当前文本与文本不同
     /// - Parameter text: 文本
     private func isCurrentTextDifferentOfText(_ text: String?) -> Bool {
@@ -412,7 +373,6 @@ extension XBTextView {
         }
     }
     
-    
     /// 更新PlaceholderStyle
     private func updatePlaceholderStyle() {
         let placeholder = self.placeholder
@@ -424,7 +384,7 @@ extension XBTextView {
 extension XBTextView: UITextViewDelegate {
     
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-
+        
         if text == "\n" {
             let shouldReturn = originalDelegate?.textViewShouldReturn?(self) ?? false
             if shouldReturn {
@@ -434,21 +394,29 @@ extension XBTextView: UITextViewDelegate {
         
         if maximumTextLength < UInt.max {
             
-             // 如果是中文输入法正在输入拼音的过程中（markedTextRange 不为 nil），是不应该限制字数的（例如输入“huang”这5个字符，其实只是为了输入“黄”这一个字符），所以在 shouldChange 这里不会限制，而是放在 didChange 那里限制。
-            let isDeleting = range.length > 0 && text.count <= 0
-            if isDeleting || (textView.markedTextRange != nil) {
+            // 如果是中文输入法正在输入拼音的过程中（markedTextRange 不为 nil），是不应该限制字数的（例如输入“huang”这5个字符，其实只是为了输入“黄”这一个字符），所以在 shouldChange 这里不会限制，而是放在 didChange 那里限制。
+            if textView.markedTextRange != nil {
                 return true
             }
             
-            let rangeLength = range.length
-            if textView.text.count - rangeLength + text.count > maximumTextLength {
+            let isDeleting = range.length > 0 && text.count <= 0
+            if isDeleting {
+                return true
+            }
+            
+            let rangeLength = textView.text.substring(with: range).count
+            let textWillOutofMaximumTextLength = textView.text.count - rangeLength +
+                text.count > maximumTextLength
+            if textWillOutofMaximumTextLength {
+                
                 // 当输入的文本达到最大长度限制后，此时继续点击 return 按钮（相当于尝试插入“\n”），就会认为总文字长度已经超过最大长度限制，所以此次 return 按钮的点击被拦截，外界无法感知到有这个 return 事件发生，所以这里为这种情况做了特殊保护
                 if textView.text.count - rangeLength == maximumTextLength && text == "\n" {
+                    originalDelegate?.textView?(self, didPreventTextChangeInRange: range, replacementText: text)
                     return false
                 }
                 
                 // 将要插入的文字裁剪成多长，就可以让它插入了
-                let substringLength = Int(maximumTextLength) - self.text.count + rangeLength
+                let substringLength = Int(maximumTextLength) - textView.text.count + rangeLength
                 if substringLength > 0 && text.count > substringLength {
                     let characterSequencesRange = (text as NSString).rangeOfComposedCharacterSequences(for: NSMakeRange(0, substringLength))
                     let allowedText = (text as NSString).substring(with: characterSequencesRange)
@@ -461,7 +429,7 @@ extension XBTextView: UITextViewDelegate {
                         }
                     }
                 }
-                    
+                
                 originalDelegate?.textView?(self, didPreventTextChangeInRange: range, replacementText: text)
                 return false
             }
@@ -469,7 +437,7 @@ extension XBTextView: UITextViewDelegate {
         }
         return true
     }
-
+    
     public func textViewDidChange(_ textView: UITextView) {
         
         // 1、iOS 10 以下的版本，从中文输入法的候选词里选词输入，是不会走到 textView:shouldChangeTextInRange:replacementText: 的，所以要在这里截断文字
@@ -480,6 +448,8 @@ extension XBTextView: UITextViewDelegate {
         
         if (textView.text as NSString).length > maximumTextLength {
             textView.text = (textView.text as NSString).substring(to: Int(maximumTextLength))
+            // 如果是在这里被截断，是无法得知截断前光标所处的位置及要输入的文本的，所以只能将当前的 selectedRange 传过去，而 replacementText 为 nil
+            originalDelegate?.textView?(self, didPreventTextChangeInRange: textView.selectedRange, replacementText: nil)
         }
         
         guard let regexString = formatterType.regexString else {
@@ -499,7 +469,7 @@ extension XBTextView: UITextViewDelegate {
         
         originalDelegate?.textViewDidChange?(textView)
     }
-
+    
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         originalDelegate?.scrollViewDidScroll?(scrollView)
     }
