@@ -24,7 +24,15 @@ final class TextFieldDemoViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.gray
         $0.layer.cornerRadius = 10
-        $0.layer.masksToBounds = true
+        //$0.layer.masksToBounds = true
+        
+        /// 平滑圆角 https://github.com/JunyuKuang/Rhythm/blob/12d2e95173a4278af424a5b05f2f2402d9fe748e/LyricsUI/AlbumArtworkView.swift#L75
+        $0.clipsToBounds = true
+        if #available(iOS 13, *) {
+            $0.layer.cornerCurve = .continuous
+        } else {
+            $0.layer.setValue(true, forKey: "continuousCorners")
+        }
         $0.placeholderColor = UIColor.black
         $0.placeholder = "情输入内容"
         $0.clearButtonMode = .always
