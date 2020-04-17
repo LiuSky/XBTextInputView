@@ -27,6 +27,7 @@ import UIKit
 
 
 /// MARK - XBTextField
+@objcMembers
 open class XBTextField: UITextField {
     
     /// 修改 placeholder 的颜色，默认是 UIColorPlaceholder

@@ -47,6 +47,7 @@ private let kSystemTextViewFixTextInsets: UIEdgeInsets = UIEdgeInsets.init(top: 
 
 
 /// MARK - XBTextView
+@objcMembers
 open class XBTextView: UITextView {
     
     /// 当通过 `setText:`、`setAttributedText:`等方式修改文字时，是否应该自动触发 `UITextViewDelegate` 里的 `textView:shouldChangeTextInRange:replacementText:`、 `textViewDidChange:` 方法
