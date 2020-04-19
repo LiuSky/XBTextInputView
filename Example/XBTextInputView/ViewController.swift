@@ -31,7 +31,8 @@ final class ViewController: UIViewController {
                          ("数字", FormatterType.number),
                          ("字母", FormatterType.alphabet),
                          ("数字和字母", FormatterType.numberAndAlphabet),
-                         ("自定义 -> 中文数字字母", FormatterType.custom(regexString: "^[\\u4E00-\\u9FA5A-Za-z0-9]+$"))]
+                         ("自定义 -> 中文数字字母", FormatterType.custom(regexString: "^[\\u4E00-\\u9FA5A-Za-z0-9]+$")),
+                         ("自定义 -> 中文-数字-字母-部分标点符号-换行", FormatterType.custom(regexString: "^[\\u4E00-\\u9FA5A-Za-z0-9*(^)$%~!@#$…&%￥—+=、。，；‘’“”：·\\s]+$"))]
     
     
     override func viewDidLoad() {
