@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1559A37F7AE63A8B7BADA9EB7E7BC0F3 /* XBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B0F1F07156CC71B6421C3DA10CAED2 /* XBTextField.swift */; };
-		24A4421FD7FEB801DA4AF80C33423D4E /* XBTextHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E53718787842D0F65B9873BD836DD /* XBTextHelp.swift */; };
+		1559A37F7AE63A8B7BADA9EB7E7BC0F3 /* XBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54358A3D456E50ABCA50FC66D4C9E6A /* XBTextField.swift */; };
+		24A4421FD7FEB801DA4AF80C33423D4E /* XBTextHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87BCD2F1B1E3FAE91363D42F5D0C61 /* XBTextHelp.swift */; };
 		3857312D1E11D4DC142EA34D80E02570 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3A41460AFC08D79A89D51A75C83BA022 /* Pods-XBTextInputView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94091461C2627FC1869B2AF21CFE1610 /* Pods-XBTextInputView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AE6DEA079383DA5C2AECB357B0D3EF2 /* XBTextInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA914A5D121532B01EAE87F268C86048 /* XBTextInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE6DEA079383DA5C2AECB357B0D3EF2 /* XBTextInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44558507C763676D27144C7B39C88F96 /* XBTextInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6821C6573F6BC548D03522038420C531 /* Pods-XBTextInputView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9F92BECF18653DF68C6F538D6C212F /* Pods-XBTextInputView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81B2B6813FD60FE0B7803C447187E520 /* XBTextInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 571CF03DF083E12E74322A50EF014768 /* XBTextInputView-dummy.m */; };
+		81B2B6813FD60FE0B7803C447187E520 /* XBTextInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3814C9ADCEB05DF8D145A67F3EF2C0A4 /* XBTextInputView-dummy.m */; };
 		8905881942F083FE992053A17988D491 /* Pods-XBTextInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED2C07F1A18347F777A1BBBBEAAAE1 /* Pods-XBTextInputView_Tests-dummy.m */; };
-		C38F0DBD8D84942EDEE25342B2F2F35F /* FormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44983D8A5CDC208A98E90EFDB55E03C5 /* FormatterType.swift */; };
-		DCFF45B5BE1A2413D4F1684CA98EDA42 /* XBTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0120218B5B6C86F0161F0DB142299B79 /* XBTextView.swift */; };
+		C38F0DBD8D84942EDEE25342B2F2F35F /* FormatterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E82EE9A7FB81E60149ED47D2C5A576 /* FormatterType.swift */; };
+		DCFF45B5BE1A2413D4F1684CA98EDA42 /* XBTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6878835CB342BBADDFCCC086300CB5 /* XBTextView.swift */; };
 		E3DFA26FF1A7FC6D138CCE43BAC15930 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E55005482005528833FF1075BD1773CB /* Pods-XBTextInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6854B3F5465A6B9B24F2DEA6AAD88 /* Pods-XBTextInputView_Example-dummy.m */; };
 		F75FEFDFC8F6122EAC1E83F6D1EE4DAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -40,40 +40,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0120218B5B6C86F0161F0DB142299B79 /* XBTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextView.swift; path = XBTextInputView/Classes/XBTextView.swift; sourceTree = "<group>"; };
+		0B6878835CB342BBADDFCCC086300CB5 /* XBTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextView.swift; path = XBTextInputView/Classes/XBTextView.swift; sourceTree = "<group>"; };
 		0CDD13862B40919BB091CF5823F3C208 /* Pods-XBTextInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XBTextInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1C7E53718787842D0F65B9873BD836DD /* XBTextHelp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextHelp.swift; path = XBTextInputView/Classes/XBTextHelp.swift; sourceTree = "<group>"; };
+		12E82EE9A7FB81E60149ED47D2C5A576 /* FormatterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatterType.swift; path = XBTextInputView/Classes/FormatterType.swift; sourceTree = "<group>"; };
+		1DBC96F2A2223BA32C36DD761B28B924 /* XBTextInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = XBTextInputView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1DD980F5A149874AA66AFE0F01B60A54 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		1E5FC283FA9003870903BB55C94882EE /* Pods-XBTextInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XBTextInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		267C79D1434C014CAC9521781990F425 /* Pods-XBTextInputView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XBTextInputView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		2CD6854B3F5465A6B9B24F2DEA6AAD88 /* Pods-XBTextInputView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XBTextInputView_Example-dummy.m"; sourceTree = "<group>"; };
+		2EDAC5BE8DD7853B351108A7F90BDFE6 /* XBTextInputView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XBTextInputView.debug.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3814C9ADCEB05DF8D145A67F3EF2C0A4 /* XBTextInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XBTextInputView-dummy.m"; sourceTree = "<group>"; };
 		3F5A5875DE048913F5AE82E23D991CDB /* Pods-XBTextInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XBTextInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3FED2C07F1A18347F777A1BBBBEAAAE1 /* Pods-XBTextInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XBTextInputView_Tests-dummy.m"; sourceTree = "<group>"; };
-		44983D8A5CDC208A98E90EFDB55E03C5 /* FormatterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatterType.swift; path = XBTextInputView/Classes/FormatterType.swift; sourceTree = "<group>"; };
+		44558507C763676D27144C7B39C88F96 /* XBTextInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XBTextInputView-umbrella.h"; sourceTree = "<group>"; };
 		4AF342BE6E40050CD3A28107EBB0F050 /* Pods-XBTextInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XBTextInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4B0BB37D978DDA9A3EDA7BF513734F62 /* Pods-XBTextInputView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XBTextInputView_Tests.modulemap"; sourceTree = "<group>"; };
-		5416470B7471AAB0E2F3A35B91A60AFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		55D3CAD8B2BAD9596EAD55490794EAB5 /* XBTextInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XBTextInputView.xcconfig; sourceTree = "<group>"; };
-		571CF03DF083E12E74322A50EF014768 /* XBTextInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XBTextInputView-dummy.m"; sourceTree = "<group>"; };
+		5D60C9D8A45E2CEC3D2E390CB37B9FE5 /* XBTextInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XBTextInputView-prefix.pch"; sourceTree = "<group>"; };
 		6526A3F4BE47C9585E2FCB8579A5C5EB /* Pods-XBTextInputView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XBTextInputView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		69CE21A956A17C85426993797C40B764 /* XBTextInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XBTextInputView.modulemap; sourceTree = "<group>"; };
 		708425DBD1890753C53517D4304E2C74 /* Pods-XBTextInputView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XBTextInputView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9134595128F5177F5F729B7014160466 /* XBTextInputView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XBTextInputView-Info.plist"; sourceTree = "<group>"; };
 		94091461C2627FC1869B2AF21CFE1610 /* Pods-XBTextInputView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XBTextInputView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A628EBDF119CEC5BF9B93C20FB62E953 /* Pods-XBTextInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XBTextInputView_Example.modulemap"; sourceTree = "<group>"; };
-		A6CE9F1357F1464A55B53F86E20CC13E /* XBTextInputView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XBTextInputView-Info.plist"; sourceTree = "<group>"; };
-		AA499D7DBFFF3E2AA77AB45B8C942BC4 /* XBTextInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XBTextInputView.modulemap; sourceTree = "<group>"; };
 		B26DBBE78A61469E37DD756FD862964A /* Pods-XBTextInputView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XBTextInputView_Example-Info.plist"; sourceTree = "<group>"; };
-		B58FBC8E4A5021A6B0514F2CB997E905 /* Pods_XBTextInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XBTextInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA914A5D121532B01EAE87F268C86048 /* XBTextInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XBTextInputView-umbrella.h"; sourceTree = "<group>"; };
-		BF87F1A6A90773005EFF9A0CA5A87613 /* XBTextInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XBTextInputView-prefix.pch"; sourceTree = "<group>"; };
-		C0989ABB15ECF372BC4F03E41719E6F7 /* XBTextInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XBTextInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1B906DAFFC26FF711CE6615387ADEF1 /* XBTextInputView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = XBTextInputView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C9D19A44A2F0618A50EA2C677B227A89 /* Pods_XBTextInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XBTextInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58FBC8E4A5021A6B0514F2CB997E905 /* Pods_XBTextInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XBTextInputView_Tests.framework; path = "Pods-XBTextInputView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0989ABB15ECF372BC4F03E41719E6F7 /* XBTextInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XBTextInputView.framework; path = XBTextInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9D19A44A2F0618A50EA2C677B227A89 /* Pods_XBTextInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XBTextInputView_Example.framework; path = "Pods-XBTextInputView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE87BCD2F1B1E3FAE91363D42F5D0C61 /* XBTextHelp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextHelp.swift; path = XBTextInputView/Classes/XBTextHelp.swift; sourceTree = "<group>"; };
 		D6950BE8604EA0F9E966285EE1E18E77 /* Pods-XBTextInputView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XBTextInputView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E006DF4DB7A2F34FB8D2032C3FFD1178 /* Pods-XBTextInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XBTextInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E8B0F1F07156CC71B6421C3DA10CAED2 /* XBTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextField.swift; path = XBTextInputView/Classes/XBTextField.swift; sourceTree = "<group>"; };
-		F15A5203F99C121A7E0765E28AF41710 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E54358A3D456E50ABCA50FC66D4C9E6A /* XBTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XBTextField.swift; path = XBTextInputView/Classes/XBTextField.swift; sourceTree = "<group>"; };
+		E62FED860473F80AD5D640BACE195850 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		F9B328061044338A0DBD27D18943E97A /* Pods-XBTextInputView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XBTextInputView_Tests-Info.plist"; sourceTree = "<group>"; };
+		FC3829AD892375291A9A03C0AF77F5E0 /* XBTextInputView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XBTextInputView.release.xcconfig; sourceTree = "<group>"; };
 		FE9F92BECF18653DF68C6F538D6C212F /* Pods-XBTextInputView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XBTextInputView_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,15 +123,25 @@
 			path = "Target Support Files/Pods-XBTextInputView_Example";
 			sourceTree = "<group>";
 		};
-		1F927F891AE745B9875237D689458FF3 /* XBTextInputView */ = {
+		1D4A0564D50E3D89714CBDFEBCCE5E71 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				44983D8A5CDC208A98E90EFDB55E03C5 /* FormatterType.swift */,
-				1C7E53718787842D0F65B9873BD836DD /* XBTextHelp.swift */,
-				E8B0F1F07156CC71B6421C3DA10CAED2 /* XBTextField.swift */,
-				0120218B5B6C86F0161F0DB142299B79 /* XBTextView.swift */,
-				A2CF9A564EF62ECBE3FC6E80C048D036 /* Pod */,
-				9000A4EF167D183966EC64CD7B87B961 /* Support Files */,
+				E62FED860473F80AD5D640BACE195850 /* LICENSE */,
+				1DD980F5A149874AA66AFE0F01B60A54 /* README.md */,
+				1DBC96F2A2223BA32C36DD761B28B924 /* XBTextInputView.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4667C33F2C62A1A635D3280F71D8C78E /* XBTextInputView */ = {
+			isa = PBXGroup;
+			children = (
+				12E82EE9A7FB81E60149ED47D2C5A576 /* FormatterType.swift */,
+				E54358A3D456E50ABCA50FC66D4C9E6A /* XBTextField.swift */,
+				CE87BCD2F1B1E3FAE91363D42F5D0C61 /* XBTextHelp.swift */,
+				0B6878835CB342BBADDFCCC086300CB5 /* XBTextView.swift */,
+				1D4A0564D50E3D89714CBDFEBCCE5E71 /* Pod */,
+				DC2336024B4E88DCD5FDC563E09E7DF6 /* Support Files */,
 			);
 			name = XBTextInputView;
 			path = ../..;
@@ -148,23 +159,9 @@
 		6E5984FE6896730289DCE4FE0C514EB4 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F927F891AE745B9875237D689458FF3 /* XBTextInputView */,
+				4667C33F2C62A1A635D3280F71D8C78E /* XBTextInputView */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		9000A4EF167D183966EC64CD7B87B961 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA499D7DBFFF3E2AA77AB45B8C942BC4 /* XBTextInputView.modulemap */,
-				55D3CAD8B2BAD9596EAD55490794EAB5 /* XBTextInputView.xcconfig */,
-				571CF03DF083E12E74322A50EF014768 /* XBTextInputView-dummy.m */,
-				A6CE9F1357F1464A55B53F86E20CC13E /* XBTextInputView-Info.plist */,
-				BF87F1A6A90773005EFF9A0CA5A87613 /* XBTextInputView-prefix.pch */,
-				BA914A5D121532B01EAE87F268C86048 /* XBTextInputView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/XBTextInputView";
 			sourceTree = "<group>";
 		};
 		9A0E337C90328FD880842EB4EE4442C8 /* Products */ = {
@@ -175,16 +172,6 @@
 				C0989ABB15ECF372BC4F03E41719E6F7 /* XBTextInputView.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A2CF9A564EF62ECBE3FC6E80C048D036 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F15A5203F99C121A7E0765E28AF41710 /* LICENSE */,
-				5416470B7471AAB0E2F3A35B91A60AFE /* README.md */,
-				C1B906DAFFC26FF711CE6615387ADEF1 /* XBTextInputView.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -228,6 +215,21 @@
 			);
 			name = "Pods-XBTextInputView_Tests";
 			path = "Target Support Files/Pods-XBTextInputView_Tests";
+			sourceTree = "<group>";
+		};
+		DC2336024B4E88DCD5FDC563E09E7DF6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				69CE21A956A17C85426993797C40B764 /* XBTextInputView.modulemap */,
+				3814C9ADCEB05DF8D145A67F3EF2C0A4 /* XBTextInputView-dummy.m */,
+				9134595128F5177F5F729B7014160466 /* XBTextInputView-Info.plist */,
+				5D60C9D8A45E2CEC3D2E390CB37B9FE5 /* XBTextInputView-prefix.pch */,
+				44558507C763676D27144C7B39C88F96 /* XBTextInputView-umbrella.h */,
+				2EDAC5BE8DD7853B351108A7F90BDFE6 /* XBTextInputView.debug.xcconfig */,
+				FC3829AD892375291A9A03C0AF77F5E0 /* XBTextInputView.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/XBTextInputView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,9 +418,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		629CEF3D09D1A0D0E95F1D58831B39E5 /* Debug */ = {
+		5FC776CDDFB06B0873A9A446D1AAB195 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55D3CAD8B2BAD9596EAD55490794EAB5 /* XBTextInputView.xcconfig */;
+			baseConfigurationReference = 2EDAC5BE8DD7853B351108A7F90BDFE6 /* XBTextInputView.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -446,38 +448,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		6A9474FBEF4036250FBB977B5751DC59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55D3CAD8B2BAD9596EAD55490794EAB5 /* XBTextInputView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XBTextInputView/XBTextInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XBTextInputView/XBTextInputView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XBTextInputView/XBTextInputView.modulemap";
-				PRODUCT_MODULE_NAME = XBTextInputView;
-				PRODUCT_NAME = XBTextInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		8F867344F4F5BD58B12D48B94BAE4212 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -566,7 +536,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -736,6 +707,38 @@
 			};
 			name = Debug;
 		};
+		F7644FB812E0A6F4C6CDF89F3F075B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3829AD892375291A9A03C0AF77F5E0 /* XBTextInputView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XBTextInputView/XBTextInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XBTextInputView/XBTextInputView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XBTextInputView/XBTextInputView.modulemap";
+				PRODUCT_MODULE_NAME = XBTextInputView;
+				PRODUCT_NAME = XBTextInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -769,8 +772,8 @@
 		E63263FFF5C733691662FC348EB4D269 /* Build configuration list for PBXNativeTarget "XBTextInputView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				629CEF3D09D1A0D0E95F1D58831B39E5 /* Debug */,
-				6A9474FBEF4036250FBB977B5751DC59 /* Release */,
+				5FC776CDDFB06B0873A9A446D1AAB195 /* Debug */,
+				F7644FB812E0A6F4C6CDF89F3F075B52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

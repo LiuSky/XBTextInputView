@@ -52,7 +52,7 @@
 		80F5AC0D2449AE54001A4C15 /* XBTextInputView_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XBTextInputView_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		80F5AC0E2449AE54001A4C15 /* OCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
 		80F5AC0F2449AE54001A4C15 /* OCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
-		815F42CB65B9A81DCB39C51D /* XBTextInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XBTextInputView.podspec; path = ../XBTextInputView.podspec; sourceTree = "<group>"; };
+		815F42CB65B9A81DCB39C51D /* XBTextInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XBTextInputView.podspec; path = ../XBTextInputView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C0BB1CCE311BE258DCF33D6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D1252534530564E77D6FC51F /* Pods-XBTextInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XBTextInputView_Example.debug.xcconfig"; path = "Target Support Files/Pods-XBTextInputView_Example/Pods-XBTextInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

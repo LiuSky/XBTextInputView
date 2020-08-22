@@ -52,6 +52,9 @@ open class XBTextField: UITextField {
     /// clearButton 在默认位置上的偏移
     @objc public dynamic var clearButtonPositionAdjustment: UIOffset = UIOffset.zero
     
+    /// rightView 在默认位置上的便宜
+    @objc public dynamic var rightViewPositionAdjustment: UIOffset = UIOffset.zero
+    
     /// 占位符
     open override var placeholder: String? {
         didSet {
@@ -140,6 +143,17 @@ open class XBTextField: UITextField {
         
         var result = super.clearButtonRect(forBounds: bounds)
         result = result.offsetBy(dx: clearButtonPositionAdjustment.horizontal, dy: clearButtonPositionAdjustment.vertical)
+        return result
+    }
+    
+    
+    /// 重写rightViewRect
+    /// - Parameter bounds: bounds
+    /// - Returns: CGRect
+    open override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        
+        var result = super.rightViewRect(forBounds: bounds)
+        result = result.offsetBy(dx: rightViewPositionAdjustment.horizontal, dy: rightViewPositionAdjustment.vertical)
         return result
     }
     
@@ -261,7 +275,6 @@ extension XBTextField {
     /// - Parameter textField: <#textField description#>
     @objc
     public func handleTextChangeEvent(_ textField: XBTextField) {
-        
         // 1、iOS 10 以下的版本，从中文输入法的候选词里选词输入，是不会走到 textField:shouldChangeCharactersInRange:replacementString: 的，所以要在这里截断文字
         // 2、如果是中文输入法正在输入拼音的过程中（markedTextRange 不为 nil），是不应该限制字数的（例如输入“huang”这5个字符，其实只是为了输入“黄”这一个字符），所以在 shouldChange 那边不会限制，而是放在 didChange 这里限制。
         guard textField.markedTextRange == nil else {
