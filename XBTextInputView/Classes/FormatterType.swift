@@ -19,6 +19,7 @@ public enum FormatterType: CustomStringConvertible {
     case number
     case alphabet
     case numberAndAlphabet
+    case space
     case custom(regexString: String)
     
     /// 格式
@@ -36,6 +37,8 @@ public enum FormatterType: CustomStringConvertible {
             return "^\\d*$"
         case .alphabet:
             return "^[a-zA-Z]*$"
+        case .space:
+            return "^[\\S]*$"
         case let .custom(regexString):
             return regexString
         default:
@@ -60,6 +63,8 @@ public enum FormatterType: CustomStringConvertible {
             return "数字"
         case .alphabet:
             return "字母"
+        case .space:
+            return "空格"
         case .custom:
             return "自定义"
         }

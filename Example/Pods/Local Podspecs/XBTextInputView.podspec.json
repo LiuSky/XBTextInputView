@@ -1,6 +1,6 @@
 {
   "name": "XBTextInputView",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "summary": "文本输入框",
   "homepage": "https://github.com/LiuSky/XBTextInputView",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/LiuSky/XBTextInputView.git",
-    "tag": "1.2.0"
+    "tag": "1.2.1"
   },
   "swift_versions": "5.0",
   "platforms": {

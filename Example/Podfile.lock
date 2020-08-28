@@ -1,5 +1,5 @@
 PODS:
-  - XBTextInputView (1.2.0)
+  - XBTextInputView (1.2.1)
 
 DEPENDENCIES:
   - XBTextInputView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XBTextInputView: b5525b50635961af2c6961fd392008b6cb14ad9c
+  XBTextInputView: bf2e590fe86a368eee40d4ec9dedc2124f83c7e4
 
 PODFILE CHECKSUM: 5de88546bfcfffdc248fd7b664fd175b28914cf0
 
