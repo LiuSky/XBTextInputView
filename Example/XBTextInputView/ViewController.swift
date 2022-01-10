@@ -23,6 +23,7 @@ final class ViewController: UIViewController {
         return $0
     }(UITableView())
     
+//    \\s
     /// 数组
     private let array = [("默认", FormatterType.default),
                          ("手机号码", FormatterType.phoneNumber),

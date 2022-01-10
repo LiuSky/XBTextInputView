@@ -384,6 +384,7 @@ extension XBTextView {
 /// MARK - UITextViewDelegate
 extension XBTextView: UITextViewDelegate {
     
+    
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         if text == "\n" {
@@ -439,6 +440,7 @@ extension XBTextView: UITextViewDelegate {
         return true
     }
     
+    
     public func textViewDidChange(_ textView: UITextView) {
         
         // 1、iOS 10 以下的版本，从中文输入法的候选词里选词输入，是不会走到 textView:shouldChangeTextInRange:replacementText: 的，所以要在这里截断文字
@@ -469,6 +471,14 @@ extension XBTextView: UITextViewDelegate {
         }
         
         originalDelegate?.textViewDidChange?(textView)
+    }
+    
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        originalDelegate?.textViewDidBeginEditing?(textView)
+    }
+    
+    public func textViewDidEndEditing(_ textView: UITextView) {
+        originalDelegate?.textViewDidEndEditing?(textView)
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

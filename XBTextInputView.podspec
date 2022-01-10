@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XBTextInputView'
-  s.version          = '1.2.1'
+  s.version          = '1.2.2'
   s.summary          = '文本输入框'
 
   s.homepage         = 'https://github.com/LiuSky/XBTextInputView'

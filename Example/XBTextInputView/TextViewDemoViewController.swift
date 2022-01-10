@@ -30,12 +30,14 @@ final class TextViewDemoViewController: UIViewController {
         $0.font = UIFont.systemFont(ofSize: 16)
         $0.textAlignment = .left
         $0.autoResizable = true
-        //$0.maximumTextLength = 50
+        $0.maximumTextLength = 300
         $0.textContainerInset = UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8)
         $0.delegate = self
         return $0
     }(XBTextView())
     
+    /// 高度
+    private var textViewHeight: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +46,10 @@ final class TextViewDemoViewController: UIViewController {
         NSLayoutConstraint.activate([
             textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            textView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            textView.heightAnchor.constraint(equalToConstant: 100)
+            textView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300),
         ])
+        textViewHeight = textView.heightAnchor.constraint(equalToConstant: 100)
+        textViewHeight?.isActive = true
     }
 
 }
@@ -60,5 +63,27 @@ extension TextViewDemoViewController: XBTextViewDelegate {
     
     func textView(_ textView: XBTextView, didPreventTextChangeInRange range: NSRange, replacementText: String?) {
         debugPrint(replacementText ?? "")
+    }
+    
+    func textView(_ textView: XBTextView, newHeightAfterTextChanged height: CGFloat) {
+        if height >= 100 {
+            textViewHeight?.isActive = false
+            textViewHeight?.constant = height
+            textViewHeight?.isActive = true
+        } else {
+            if textViewHeight?.constant != 100 {
+                textViewHeight?.isActive = false
+                textViewHeight?.constant = 100
+                textViewHeight?.isActive = true
+            }
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        debugPrint("123123")
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        debugPrint("12321")
     }
 }
