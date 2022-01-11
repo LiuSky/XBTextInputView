@@ -50,6 +50,14 @@ final class TextViewDemoViewController: UIViewController {
         ])
         textViewHeight = textView.heightAnchor.constraint(equalToConstant: 100)
         textViewHeight?.isActive = true
+        
+        
+        textView.text = "哈哈哈"
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.textView.endEditing(true)
     }
 
 }
@@ -80,10 +88,14 @@ extension TextViewDemoViewController: XBTextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        debugPrint("123123")
+        debugPrint("开始编辑")
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        debugPrint("结束编辑")
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        debugPrint("12321")
+        debugPrint("开始改变")
     }
 }

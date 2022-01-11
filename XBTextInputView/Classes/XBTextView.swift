@@ -116,7 +116,7 @@ open class XBTextView: UITextView {
         if #available(iOS 11, *) {
             contentInsetAdjustmentBehavior = .never
         }
-        
+        // 监听用户手工输入引发的文字变化（代码里通过 setText: 修改的不在这个监听范围内）
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextChanged(_:)), name: UITextView.textDidChangeNotification, object: nil)
         configView()
     }
@@ -124,6 +124,11 @@ open class XBTextView: UITextView {
     /// 配置视图
     private func configView() {
         addSubview(placeholderLabel)
+    }
+    
+    /// 释放
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required public init?(coder: NSCoder) {
@@ -456,6 +461,7 @@ extension XBTextView: UITextViewDelegate {
         }
         
         guard let regexString = formatterType.regexString else {
+            originalDelegate?.textViewDidChange?(textView)
             return
         }
         
@@ -467,6 +473,7 @@ extension XBTextView: UITextViewDelegate {
         }
         
         if shouldResponseToProgrammaticallyTextChanges {
+            originalDelegate?.textViewDidChange?(textView)
             return
         }
         
